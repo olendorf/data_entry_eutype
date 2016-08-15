@@ -2,6 +2,11 @@ language: ruby
 rvm:
   - 2.3.0
 services:
+  - postgresql
   - elasticsearch
 before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
   - sleep 5 # To make sure Elasticsearch instance is ready
+test:
+  adapter: postgresql
+  database: travis_ci_test
