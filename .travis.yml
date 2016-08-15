@@ -5,6 +5,7 @@ services:
   - postgresql
   - elasticsearch
 before_script:
+  - ls -la /usr/share
   - psql -c 'create database app_test;' -U postgres
   - sleep 10 # To make sure Elasticsearch instance is ready
 test:
