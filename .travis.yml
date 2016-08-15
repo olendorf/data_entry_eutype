@@ -8,6 +8,9 @@ before_install:
   - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.3.5/elasticsearch-2.3.5.deb && sudo dpkg -i --force-confnew elasticsearch-2.3.5.deb && sudo service elasticsearch restart
 before_script:
   - ls -la /usr/share
+  - mkdir -p /usr/share/elasticsearch/config/scripts
+  - cp /etc/elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config
+  - cp /etc/elasticsearch/logging.yml /usr/share/elasticsearch/config
   - psql -c 'create database app_test;' -U postgres
   - sleep 10 # To make sure Elasticsearch instance is ready
 test:
