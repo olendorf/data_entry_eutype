@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.2
+  - jruby
+  - rbx-2
+services:
+  - elasticsearch
+before_script:
+  - sleep 5 # To make sure Elasticsearch instance is ready
