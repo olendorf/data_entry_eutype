@@ -15,7 +15,10 @@ before_script:
   - sudo cp /etc/elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config
   - sudo cp /etc/elasticsearch/logging.yml /usr/share/elasticsearch/config
   - psql -c 'create database app_test;' -U postgres
-  - sleep 10 # To make sure Elasticsearch instance is ready
+  - sleep 10 # To make sure Elasticsearch instance is ready foo
 test:
   adapter: postgresql
   database: app_test  
+  
+  
+  
