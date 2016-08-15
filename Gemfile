@@ -8,6 +8,9 @@ gem 'rails', '4.2.5'
 gem 'pg'
 # Type coercion for hstore attributes
 gem 'virtus'
+# Elasticsearch
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -40,6 +43,7 @@ group :test do
   gem "selenium-webdriver"  # Web page interaction
   gem "capybara"  # For integration testing.
   gem "webmock"   # Allows mocking of web apis for instance
+  gem 'elasticsearch-extensions'  # Test cluster functionality
 end
 
 group :test, :development do
