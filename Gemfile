@@ -43,7 +43,7 @@ group :test do
   gem "selenium-webdriver"  # Web page interaction
   gem "capybara"  # For integration testing.
   gem "webmock"   # Allows mocking of web apis for instance
-  gem 'elasticsearch-extensions'
+  gem 'elasticsearch-extensions'  # Test cluster functionality
 end
 
 group :test, :development do
