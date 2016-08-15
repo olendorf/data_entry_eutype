@@ -73,6 +73,4 @@
       config.after(:each) do
         DatabaseCleaner.clean
       end
-      
-      puts "Loaded database_cleaner support"
     end

@@ -1,21 +1,28 @@
-
+require 'rake'
+require 'elasticsearch/extensions/test/cluster/tasks'
+require 'elasticsearch/transport'   # This may not be needed, but I think if you get an error, it helps messaging.
 
 RSpec.configure do |config|
-  # Snipped other config.
+  
+  ## 
+  # Elasticsearch is slow to start up test clusters so only do it when elasticsearch: true
+  # 
+  # Example rspec implementation.
+  # RSpec.describe Model, elasticsearch: true, type: :model do
+  #   testing code
+  # end
   config.before :all, elasticsearch: true do
     Elasticsearch::Extensions::Test::Cluster.start unless Elasticsearch::Extensions::Test::Cluster.running?
   end
 
+  ##
+  # Keep the clusters running until the entire test suite is done.
   config.after :suite do
     Elasticsearch::Extensions::Test::Cluster.stop if Elasticsearch::Extensions::Test::Cluster.running?
-    puts "Stopped clusters"
   end
   
   
-end
-
-RSpec.configure do |config|
-  # Create indexes for all elastic searchable models
+  # Create indexes for all elastic searchable models on an as need basis
   config.before :each, elasticsearch: true do
     ActiveRecord::Base.descendants.each do |model|
       if model.respond_to?(:__elasticsearch__)
