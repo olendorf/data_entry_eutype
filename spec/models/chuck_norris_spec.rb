@@ -26,7 +26,6 @@ RSpec.describe ChuckNorris, elasticsearch: true, type: :model do
     it 'should index the model into elasticsearch' do
       record = create :chuck_norris   # create a record
       ChuckNorris.import  # import the record
-      # ChuckNorris.__elasticsearch__.refresh_index!  
         
       terms = record.kungfu.fact.split(' ')  # get ready 
         

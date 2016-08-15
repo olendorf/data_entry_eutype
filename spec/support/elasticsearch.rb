@@ -27,6 +27,7 @@ RSpec.configure do |config|
     ActiveRecord::Base.descendants.each do |model|
       if model.respond_to?(:__elasticsearch__)
         begin
+          # Sets the test client to the correct port.
           model.__elasticsearch__.client = Elasticsearch::Client.new host: 'localhost:9250'
           
           model.__elasticsearch__.create_index!
