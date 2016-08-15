@@ -1,6 +1,4 @@
-require 'rake'
-require 'elasticsearch/extensions/test/cluster/tasks'
-require 'elasticsearch/transport'   # This may not be needed, but I think if you get an error, it helps messaging.
+
 
 RSpec.configure do |config|
   
