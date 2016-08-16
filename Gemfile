@@ -39,6 +39,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'coveralls', require: false
+
 group :test do
   gem "selenium-webdriver"  # Web page interaction
   gem "capybara"  # For integration testing.

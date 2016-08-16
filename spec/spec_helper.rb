@@ -11,6 +11,11 @@
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
+require 'rake'
+require 'elasticsearch/extensions/test/cluster/tasks'
+require 'elasticsearch/transport'   # This may not be needed, but I think if you get an error, it helps messaging.
+require 'coveralls'
+Coveralls.wear!
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
