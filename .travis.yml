@@ -18,7 +18,11 @@ before_script:
   - sleep 10 # To make sure Elasticsearch instance is ready foo
 test:
   adapter: postgresql
-  database: app_test  
+  database: app_test
+branches:
+  only: 
+    - master
+    - develop
   
   
   
