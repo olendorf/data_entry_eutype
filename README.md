@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/olendorf/hstore_elasticsearch_demo.svg?branch=develop)](https://travis-ci.org/olendorf/hstore_elasticsearch_demo)
-
 [![Coverage Status](https://coveralls.io/repos/github/olendorf/hstore_elasticsearch_demo/badge.svg?branch=develop)](https://coveralls.io/github/olendorf/hstore_elasticsearch_demo?branch=develop)
 
 I was trying to get this all done, and I found it very difficult to get the whole thing working. The information is out there, but scattered, and often incomplete.
